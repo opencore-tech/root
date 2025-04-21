@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+  <groupId>tech.opencore</groupId>
+  <artifactId>root</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>root</name>
+  <description>Root project aimed at dependency management</description>
+  <url>https://github.com/opencore-tech/root</url>
+  
+  <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution> <!-- 'repo' means it's included in the repo -->
+        </license>
+  </licenses>
+  
+  <developers>
+        <developer>
+            <id>ericb</id>
+            <name>Eric Boukobza</name>
+            <email>eric.boukobza@infundity.com</email>
+            <organization>Infundity Ltd.</organization>
+            <organizationUrl>http://www.infundity.com</organizationUrl>
+        </developer>
+  </developers>
+  
+  <scm>
+        <!-- Read-only connection -->
+        <connection>scm:git:git://github.com/opencore-tech/root.git</connection>
+        <!-- Developer connection (read-write) -->
+        <developerConnection>scm:git:ssh://github.com:opencore-tech/root.git</developerConnection>
+        <!-- URL for browsing the repository -->
+        <url>https://github.com/opencore-tech/root/tree/main</url>
+        <!-- Use 'main' or 'master' or your primary branch -->
+        <tag>HEAD</tag> <!-- Or use a specific tag during release -->
+  </scm>
+  
+  <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- TODO: Set your target Java version -->
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+
+        <!-- Dependency Versions -->
+        <junit.jupiter.version>5.10.2</junit.jupiter.version>
+
+        <!-- Plugin Versions -->
+        <maven.source.plugin.version>3.3.1</maven.source.plugin.version>
+        <maven.javadoc.plugin.version>3.6.3</maven.javadoc.plugin.version>
+        <maven.gpg.plugin.version>3.2.4</maven.gpg.plugin.version>
+        <nexus.staging.maven.plugin.version>1.7.0</nexus.staging.maven.plugin.version>
+        <maven.surefire.plugin.version>3.2.5</maven.surefire.plugin.version>
+        <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
+        <maven.release.plugin.version>3.0.1</maven.release.plugin.version>
+
+
+        <!-- =============================================================== -->
+        <!-- Sonatype OSSRH Configuration Properties -->
+        <!-- =============================================================== -->
+        <!-- This ID must match the <server> ID in your settings.xml -->
+        <!-- TODO: Ensure this matches your settings.xml server ID for Sonatype -->
+        <ossrh.server.id>ossrh</ossrh.server.id>
+        <!-- TODO: Ensure this points to the correct Sonatype OSSRH URL -->
+        <ossrh.nexus.url>https://s01.oss.sonatype.org/</ossrh.nexus.url>
+        <!-- You might use https://oss.sonatype.org/ if you have an older account -->
+
+        <!-- =============================================================== -->
+        <!-- GPG Configuration (Optional, but recommended for security) -->
+        <!-- =============================================================== -->
+        <!-- Avoid storing passphrase directly in POM. Configure in settings.xml or -->
+        <!-- pass via command line: mvn ... -Dgpg.passphrase=your_passphrase -->
+        <!-- Or set up gpg-agent -->
+        <!-- <gpg.executable>gpg</gpg.executable> --> <!-- Usually found automatically -->
+        <!-- <gpg.keyname>YOUR_GPG_KEY_ID</gpg.keyname> --> <!-- Optional: Specify key ID if needed -->
+        <!-- <gpg.passphrase>DO_NOT_STORE_PASSPHRASE_HERE</gpg.passphrase> -->
+  </properties>
+  
+</project>
